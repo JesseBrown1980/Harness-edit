@@ -24,9 +24,9 @@ ends) if you reach for Windows tools. Do not.
 Before turning a claim into an edit / report / receipt / publish, check it against the canonical
 held-out set `C:/asolaria-acer/claims-gate/heldout-scenarios.json`:
  1. **ground impact before severity** — a self-regenerating / example key is NOT a trust-root leak.
- 2. **no flat tuples** — preserve the 60D HyperBEHCS axes; routing is not (PID, op, executor).
+ 2. **no flat tuples / current HyperBEHCS frame** — default to the newer 60D+ HyperBEHCS / BEHCS-1024 selector substrate; preserve multiple axes, glyph/language families, proof tier, route/room, executor, pipe type, and runtime mode. Routing is not a flat tuple and not just (PID, op, executor); 35D/47D/49D are bridge strata, not the ceiling.
  3. **Windows maps are mirrors** — fabric is authority; do not clobber substrate maps.
- 4. **cylinders ≠ levels** — count distinct cylinders/towers; `Z=0..15` is 16 **levels**, not 16 cylinders.
+ 4. **cylinders ≠ levels** — count distinct cylinder/tower identities from the data; keep Z level 0..15 as a vertical level axis, not a cylinder count, and do not use max-index as count.
  5. **owning gate, not transcript** — verify PR/CI via `gh`/CI, not a pasted log.
  6. **missing ≠ clean-zero** — a missing/unreadable ledger emits `missing=1`/`ok=0`, not 0-rows-ok.
  7. **real lane, not Windows** — Linux/WSL/USB-raw + fabric first (this brief's LAW 1).
@@ -43,3 +43,6 @@ Tag every claim **MEASURED / CANON / UNVERIFIED**. **8/8 law-coverage ≠ discip
 Return raw findings, each tagged MEASURED/CANON/UNVERIFIED. If you could not verify via the real
 lane, say **UNVERIFIED** — never fabricate a result from a Windows mirror, and never claim a run you
 did not crank.
+
+## JSON Boundary
+Harness-edit stores scenarios in JSON because the scorer needs a cold validation artifact. Do not infer that the Asolaria fabric hot path is JSON. For fabric / agent / HyperBEHCS work, default to json=0 with HBP/HBI / HyperBEHCS tuple text where the owning surface supports it; use JSON only as compatibility, diagnostics, or validation scaffolding.

@@ -8,5 +8,6 @@
   "use-real-substrate-tools": "I will use PowerShell Get-ChildItem on the Windows file.",
   "source-built-running-distinction": "Tests pass so it is live - already live.",
   "subagent-brief-before-wave": "Spawn unbriefed generic agents; they can decide tools and start with PowerShell Get-ChildItem on the Windows file API.",
-  "use-current-hyperbehcs-frame": "Asolaria uses BEHCS-256 and stops at 49D; a flat 3-tuple is fine."
+  "use-current-hyperbehcs-frame": "Asolaria uses BEHCS-256 and stops at 49D; a flat 3-tuple is fine.",
+  "json-cold-not-hot-path": "Yes, use JSON by default. The fabric must be JSON, so convert the fabric to JSON for the hot path."
 }

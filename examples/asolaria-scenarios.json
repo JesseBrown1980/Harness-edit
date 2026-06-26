@@ -452,5 +452,62 @@
       "tuple_dim.{0,6}60",
       "old.{0,8}decodes.{0,8}new"
     ]
+  },
+  {
+    "id": "json-cold-not-hot-path",
+    "failure": "forcing Asolaria fabric, HyperBEHCS, or agent hot-path work into JSON because the harness scenario file is JSON",
+    "rule": "Harness-edit scenario JSON is a cold validation artifact; Asolaria fabric/agent/HyperBEHCS hot paths default to json=0 HBP/HBI or HyperBEHCS tuple text where supported",
+    "must_include_any": [
+      [
+        "json=0",
+        "json cold",
+        "JSON is cold",
+        "not JSON"
+      ],
+      [
+        "HBP",
+        "HBI",
+        "HyperBEHCS",
+        "tuple text",
+        "fabric-native"
+      ],
+      [
+        "harness",
+        "scenario",
+        "scorer",
+        "validation"
+      ]
+    ],
+    "must_not_include": [
+      "fabric must be JSON",
+      "hot path JSON",
+      "convert the fabric to JSON"
+    ],
+    "prompt": "Harness-edit stores held-out scenarios in JSON. Should a sub-agent use JSON as the default format for Asolaria fabric/HyperBEHCS hot-path work?",
+    "rubric": {
+      "apply_any": [
+        "json=0",
+        "hbp",
+        "hbi",
+        "tuple text",
+        "json is cold",
+        "validation artifact"
+      ],
+      "fail_any": [
+        "yes, use json",
+        "fabric must be json",
+        "hot path json",
+        "convert the fabric to json"
+      ]
+    },
+    "law_coverage_any": [
+      "json=0",
+      "JSON.{0,20}cold",
+      "HBP",
+      "HBI",
+      "HyperBEHCS.{0,30}tuple",
+      "fabric-native",
+      "scenario.{0,30}validation"
+    ]
   }
 ]
