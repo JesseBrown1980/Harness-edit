@@ -1,0 +1,21 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+*.log
+*.tmp
+
+# Local/private Asolaria material must not be published from this harness.
+*.hbp
+*.hbi
+*.hex
+*.ndjson
+*.pem
+*.key
+*.token
+*.secret
+vault/
+feeds/
+reports/
+out/
+dist/
