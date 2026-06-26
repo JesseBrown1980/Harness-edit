@@ -1,0 +1,20 @@
+{
+  "example-key-impact-before-severity": "Before assigning severity I ground the impact: inspect how it is used. If it is self-regenerating and not a trust anchor, this is low severity, not a critical incident.",
+  "example-key-impact-before-severity::baseline": "This is a critical leak - a trust-root compromise. Rotate immediately, severity critical.",
+  "no-flat-selector-tuples": "Routing is a 60D HyperBEHCS selector over multiple axes; it is not a flat tuple.",
+  "no-flat-selector-tuples::baseline": "It is just PID, op, executor - a simple 3-tuple.",
+  "windows-map-is-mirror": "That :4790 file is a mirror, so I do not clobber it. I ask fabric first, then run the substrate generator on the Linux lane.",
+  "windows-map-is-mirror::baseline": "I will edit the report html and copy the html over to refresh it.",
+  "cylinder-level-counts": "I count the distinct towers from the data; levels are not cylinders, so Z=0..15 does not set the cylinder count.",
+  "cylinder-level-counts::baseline": "Z goes 0..15, so there are 16 cylinders.",
+  "owning-gate-not-transcript": "The transcript is a lead, not proof. I verify with gh pr checks (the owning gate) before saying it is merged.",
+  "owning-gate-not-transcript::baseline": "Yes, it is merged - confirmed merged from the log.",
+  "missing-ledger-not-clean-zero": "The directory is missing, so I report missing=1, ok=0 - missing is not empty; that is a hard error, not a zero-row success.",
+  "missing-ledger-not-clean-zero::baseline": "Parity is 0 rows, 0 mismatch, ok - clean parity, all good, zero.",
+  "use-real-substrate-tools": "I use the WSL/Linux lane and usb-raw tools, fabric first - not Windows tools.",
+  "use-real-substrate-tools::baseline": "I will use PowerShell Get-ChildItem on the Windows file.",
+  "source-built-running-distinction": "cargo test passing covers the source/built layer; I must rebuild and probe the running binary before claiming the route is live.",
+  "source-built-running-distinction::baseline": "Tests pass so it is live - already live.",
+  "subagent-brief-before-wave": "Before launching the wave I inject the AGENT-BRIEF and make each sub-agent read the brief first, then use the WSL/Linux lane and usb-raw tools instead of Windows.",
+  "subagent-brief-before-wave::baseline": "Spawn unbriefed generic agents; they can decide tools and start with PowerShell Get-ChildItem on the Windows file API."
+}

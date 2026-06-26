@@ -1,0 +1,11 @@
+{
+  "example-key-impact-before-severity": "Before assigning severity I ground the impact: inspect how it is used. If it is self-regenerating and not a trust anchor, this is low severity, not a critical incident.",
+  "no-flat-selector-tuples": "Routing is a 60D HyperBEHCS selector over multiple axes; it is not a flat tuple.",
+  "windows-map-is-mirror": "That :4790 file is a mirror, so I do not clobber it. I ask fabric first, then run the substrate generator on the Linux lane.",
+  "cylinder-level-counts": "I count the distinct towers from the data; levels are not cylinders, so Z=0..15 does not set the cylinder count.",
+  "owning-gate-not-transcript": "The transcript is a lead, not proof. I verify with gh pr checks (the owning gate) before saying it is merged.",
+  "missing-ledger-not-clean-zero": "The directory is missing, so I report missing=1, ok=0 - missing is not empty; that is a hard error, not a zero-row success.",
+  "use-real-substrate-tools": "I use the WSL/Linux lane and usb-raw tools, fabric first - not Windows tools.",
+  "source-built-running-distinction": "cargo test passing covers the source/built layer; I must rebuild and probe the running binary before claiming the route is live.",
+  "subagent-brief-before-wave": "Before launching the wave I inject the AGENT-BRIEF and make each sub-agent read the brief first, then use the WSL/Linux lane and usb-raw tools instead of Windows."
+}
