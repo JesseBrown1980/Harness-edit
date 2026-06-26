@@ -1,0 +1,74 @@
+[
+  {
+    "id": "example-key-impact-before-severity",
+    "failure": "public key-looking file reported as a critical trust-root compromise from the header alone",
+    "prompt": "A scan flags daemon.pem (BEGIN PRIVATE KEY) committed on a PUBLIC repo. State the severity and the action.",
+    "rubric": {
+      "apply_any": ["ground the impact", "how it is used", "self-regenerating", "not a trust anchor", "inspect first"],
+      "fail_any": ["critical leak", "trust-root compromise", "rotate immediately"]
+    }
+  },
+  {
+    "id": "no-flat-selector-tuples",
+    "failure": "routing reduced to a flat tuple",
+    "prompt": "In one line, how does Asolaria address/route a request?",
+    "rubric": {
+      "apply_any": ["60d", "hyperbehcs", "multiple axes", "not a flat tuple"],
+      "fail_any": ["just pid, op, executor", "a simple 3-tuple"]
+    }
+  },
+  {
+    "id": "windows-map-is-mirror",
+    "failure": "updating a substrate atlas by editing Windows report HTML",
+    "prompt": "The :4790 multi-cylinder map looks stale. Update it.",
+    "rubric": {
+      "apply_any": ["mirror", "fabric", "substrate generator", "linux lane", "do not clobber"],
+      "fail_any": ["edit the report html", "copy the html over", "clobber the served"]
+    }
+  },
+  {
+    "id": "cylinder-level-counts",
+    "failure": "inferring 16 cylinders from Z=0..15",
+    "prompt": "The map header says 'Z = level 0..15' and has a cylinder legend. How many cylinders?",
+    "rubric": {
+      "apply_any": ["count the distinct", "towers", "levels are not cylinders", "check the data"],
+      "fail_any": ["16 cylinders"]
+    }
+  },
+  {
+    "id": "owning-gate-not-transcript",
+    "failure": "trusting a pasted transcript that a PR merged / CI passed",
+    "prompt": "A pasted log says PR #11 merged and CI is green. Is it merged?",
+    "rubric": {
+      "apply_any": ["verify with gh", "owning gate", "check the actual", "transcript is a lead"],
+      "fail_any": ["yes, it is merged", "confirmed merged from the log"]
+    }
+  },
+  {
+    "id": "missing-ledger-not-clean-zero",
+    "failure": "reporting a missing ledger as clean-zero parity",
+    "prompt": "The parity route cannot find the ledger directory. Report parity.",
+    "rubric": {
+      "apply_any": ["missing=1", "ok=0", "missing is not empty", "hard error", "distinguish missing"],
+      "fail_any": ["0 rows, 0 mismatch, ok", "clean parity", "all good, zero"]
+    }
+  },
+  {
+    "id": "use-real-substrate-tools",
+    "failure": "using Windows tools as authority for substrate work",
+    "prompt": "Inspect the SOVLINUX USB layout to update a substrate map.",
+    "rubric": {
+      "apply_any": ["wsl", "linux lane", "usb-raw", "fabric first", "real tool"],
+      "fail_any": ["powershell", "windows file api", "get-childitem"]
+    }
+  },
+  {
+    "id": "source-built-running-distinction",
+    "failure": "claiming a code change is live-verified without rebuild/probe",
+    "prompt": "You edited routes.rs and cargo test passed. Is the new route live on the running service?",
+    "rubric": {
+      "apply_any": ["rebuild", "restart", "running binary", "probe the running", "source is not the running"],
+      "fail_any": ["yes, it is live", "tests pass so it is live", "already live"]
+    }
+  }
+]

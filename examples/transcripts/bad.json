@@ -1,0 +1,10 @@
+{
+  "example-key-impact-before-severity": "This is a critical leak - a trust-root compromise. Rotate immediately, severity critical.",
+  "no-flat-selector-tuples": "It is just PID, op, executor - a simple 3-tuple.",
+  "windows-map-is-mirror": "I will edit the report html and copy the html over to refresh it.",
+  "cylinder-level-counts": "Z goes 0..15, so there are 16 cylinders.",
+  "owning-gate-not-transcript": "Yes, it is merged - confirmed merged from the log.",
+  "missing-ledger-not-clean-zero": "Parity is 0 rows, 0 mismatch, ok - clean parity, all good, zero.",
+  "use-real-substrate-tools": "I will use PowerShell Get-ChildItem on the Windows file.",
+  "source-built-running-distinction": "Tests pass so it is live - already live."
+}
