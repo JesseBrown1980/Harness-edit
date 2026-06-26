@@ -3,113 +3,342 @@
     "id": "example-key-impact-before-severity",
     "failure": "public key-looking file reported as a critical trust-root compromise from the header alone",
     "must_include_any": [
-      ["ground impact", "ground the impact", "impact before severity", "inspect usage", "inspect how it is used"],
-      ["trust root", "trust anchor", "non-anchor", "self-regenerating", "example key"]
+      [
+        "ground impact",
+        "ground the impact",
+        "impact before severity",
+        "inspect usage",
+        "inspect how it is used"
+      ],
+      [
+        "trust root",
+        "trust anchor",
+        "non-anchor",
+        "self-regenerating",
+        "example key"
+      ]
     ],
-    "must_not_include": ["always critical", "automatic incident"],
+    "must_not_include": [
+      "always critical",
+      "automatic incident"
+    ],
     "prompt": "A scan flags daemon.pem (BEGIN PRIVATE KEY) committed on a PUBLIC repo. State the severity and the action.",
     "rubric": {
-      "apply_any": ["ground the impact", "how it is used", "self-regenerating", "not a trust anchor", "inspect first"],
-      "fail_any": ["critical leak", "trust-root compromise", "rotate immediately"]
-    }
+      "apply_any": [
+        "ground the impact",
+        "how it is used",
+        "self-regenerating",
+        "not a trust anchor",
+        "inspect first"
+      ],
+      "fail_any": [
+        "critical leak",
+        "trust-root compromise",
+        "rotate immediately"
+      ]
+    },
+    "law_coverage_any": [
+      "ground impact",
+      "impact before sever",
+      "file[\\W_]{0,4}is[\\W_]{0,4}a[\\W_]{0,4}key",
+      "self[- ]?regenerat",
+      "don'?t over-?inflate"
+    ]
   },
   {
     "id": "no-flat-selector-tuples",
     "failure": "routing reduced to a flat tuple",
     "must_include_any": [
-      ["60D", "HyperBEHCS"],
-      ["do not flatten", "anti-flatten", "preserve axes", "not a flat tuple", "multiple axes"]
+      [
+        "60D",
+        "HyperBEHCS"
+      ],
+      [
+        "do not flatten",
+        "anti-flatten",
+        "preserve axes",
+        "not a flat tuple",
+        "multiple axes"
+      ]
     ],
-    "must_not_include": ["just PID op executor"],
+    "must_not_include": [
+      "just PID op executor"
+    ],
     "prompt": "In one line, how does Asolaria address/route a request?",
     "rubric": {
-      "apply_any": ["60d", "hyperbehcs", "multiple axes", "not a flat tuple"],
-      "fail_any": ["just pid, op, executor", "a simple 3-tuple"]
-    }
+      "apply_any": [
+        "60d",
+        "hyperbehcs",
+        "multiple axes",
+        "not a flat tuple"
+      ],
+      "fail_any": [
+        "just pid, op, executor",
+        "a simple 3-tuple"
+      ]
+    },
+    "law_coverage_any": [
+      "60D",
+      "hyperbehcs",
+      "anti-?flatten",
+      "not (a )?(3-?tuple|flat)",
+      "selector"
+    ]
   },
   {
     "id": "windows-map-is-mirror",
     "failure": "updating a substrate atlas by editing Windows report HTML",
     "must_include_any": [
-      ["Windows", "report"],
-      ["mirror", "not authority", "fabric/canon", "Linux", "USB", "raw", "linux lane", "substrate generator"]
+      [
+        "Windows",
+        "report"
+      ],
+      [
+        "mirror",
+        "not authority",
+        "fabric/canon",
+        "Linux",
+        "USB",
+        "raw",
+        "linux lane",
+        "substrate generator"
+      ]
     ],
-    "must_not_include": ["clobber the html"],
+    "must_not_include": [
+      "clobber the html"
+    ],
     "prompt": "The :4790 multi-cylinder map looks stale. Update it.",
     "rubric": {
-      "apply_any": ["mirror", "fabric", "substrate generator", "linux lane", "do not clobber"],
-      "fail_any": ["edit the report html", "copy the html over", "clobber the served"]
-    }
+      "apply_any": [
+        "mirror",
+        "fabric",
+        "substrate generator",
+        "linux lane",
+        "do not clobber"
+      ],
+      "fail_any": [
+        "edit the report html",
+        "copy the html over",
+        "clobber the served"
+      ]
+    },
+    "law_coverage_any": [
+      "windows.{0,40}mirror",
+      "mirror.{0,15}only",
+      "don'?t clobber",
+      "substrate.{0,15}generator"
+    ]
   },
   {
     "id": "cylinder-level-counts",
     "failure": "inferring 16 cylinders from Z=0..15",
     "must_include_any": [
-      ["cylinder", "tower"],
-      ["level", "Z"],
-      ["distinct", "max-index", "count the distinct", "levels are not cylinders"]
+      [
+        "cylinder",
+        "tower"
+      ],
+      [
+        "level",
+        "Z"
+      ],
+      [
+        "distinct",
+        "max-index",
+        "count the distinct",
+        "levels are not cylinders"
+      ]
     ],
-    "must_not_include": ["16 cylinders"],
+    "must_not_include": [
+      "16 cylinders"
+    ],
     "prompt": "The map header says 'Z = level 0..15' and has a cylinder legend. How many cylinders?",
     "rubric": {
-      "apply_any": ["count the distinct", "towers", "levels are not cylinders", "check the data"],
-      "fail_any": ["16 cylinders"]
-    }
+      "apply_any": [
+        "count the distinct",
+        "towers",
+        "levels are not cylinders",
+        "check the data"
+      ],
+      "fail_any": [
+        "16 cylinders"
+      ]
+    },
+    "law_coverage_any": [
+      "distinct (cylinder|tower)",
+      "count distinct",
+      "max[- ]?index",
+      "15 cylinders",
+      "16 levels"
+    ]
   },
   {
     "id": "owning-gate-not-transcript",
     "failure": "trusting a pasted transcript that a PR merged / CI passed",
     "must_include_any": [
-      ["GitHub", "gh pr checks", "owning gate", "owning CI"],
-      ["pasted", "transcript", "lead", "not proof"]
+      [
+        "GitHub",
+        "gh pr checks",
+        "owning gate",
+        "owning CI"
+      ],
+      [
+        "pasted",
+        "transcript",
+        "lead",
+        "not proof"
+      ]
     ],
-    "must_not_include": ["transcript is proof"],
+    "must_not_include": [
+      "transcript is proof"
+    ],
     "prompt": "A pasted log says PR #11 merged and CI is green. Is it merged?",
     "rubric": {
-      "apply_any": ["verify with gh", "owning gate", "check the actual", "transcript is a lead"],
-      "fail_any": ["yes, it is merged", "confirmed merged from the log"]
-    }
+      "apply_any": [
+        "verify with gh",
+        "owning gate",
+        "check the actual",
+        "transcript is a lead"
+      ],
+      "fail_any": [
+        "yes, it is merged",
+        "confirmed merged from the log"
+      ]
+    },
+    "law_coverage_any": [
+      "owning (gate|ci)",
+      "gh pr checks",
+      "pasted.{0,20}(log|transcript)",
+      "transcript.{0,20}(lead|not proof)",
+      "1\\.81 ci"
+    ]
   },
   {
     "id": "missing-ledger-not-clean-zero",
     "failure": "reporting a missing ledger as clean-zero parity",
     "must_include_any": [
-      ["missing", "unreadable"],
-      ["ok=0", "missing=1", "hard boundary", "hard error", "error"]
+      [
+        "missing",
+        "unreadable"
+      ],
+      [
+        "ok=0",
+        "missing=1",
+        "hard boundary",
+        "hard error",
+        "error"
+      ]
     ],
-    "must_not_include": ["missing is clean"],
+    "must_not_include": [
+      "missing is clean"
+    ],
     "prompt": "The parity route cannot find the ledger directory. Report parity.",
     "rubric": {
-      "apply_any": ["missing=1", "ok=0", "missing is not empty", "hard error", "distinguish missing"],
-      "fail_any": ["0 rows, 0 mismatch, ok", "clean parity", "all good, zero"]
-    }
+      "apply_any": [
+        "missing=1",
+        "ok=0",
+        "missing is not empty",
+        "hard error",
+        "distinguish missing"
+      ],
+      "fail_any": [
+        "0 rows, 0 mismatch, ok",
+        "clean parity",
+        "all good, zero"
+      ]
+    },
+    "law_coverage_any": [
+      "missing=1",
+      "ok=0",
+      "missing.{0,25}(empty|masquerad|clean)",
+      "missing[- ]?ledger"
+    ]
   },
   {
     "id": "use-real-substrate-tools",
     "failure": "using Windows tools as authority for substrate work",
     "must_include_any": [
-      ["Linux", "Ubuntu", "WSL", "USB", "raw", "linux lane", "usb-raw"],
-      ["fabric first", "fabric/canon", "owning substrate"]
+      [
+        "Linux",
+        "Ubuntu",
+        "WSL",
+        "USB",
+        "raw",
+        "linux lane",
+        "usb-raw"
+      ],
+      [
+        "fabric first",
+        "fabric/canon",
+        "owning substrate"
+      ]
     ],
-    "must_not_include": ["C: is authority"],
+    "must_not_include": [
+      "C: is authority"
+    ],
     "prompt": "Inspect the SOVLINUX USB layout to update a substrate map.",
     "rubric": {
-      "apply_any": ["wsl", "linux lane", "usb-raw", "fabric first", "real tool"],
-      "fail_any": ["powershell", "windows file api", "get-childitem"]
-    }
+      "apply_any": [
+        "wsl",
+        "linux lane",
+        "usb-raw",
+        "fabric first",
+        "real tool"
+      ],
+      "fail_any": [
+        "powershell",
+        "windows file api",
+        "get-childitem"
+      ]
+    },
+    "law_coverage_any": [
+      "linux/wsl/usb",
+      "real tools",
+      "not.{0,6}windows",
+      "usb[- ]?raw",
+      "wsl"
+    ]
   },
   {
     "id": "source-built-running-distinction",
     "failure": "claiming a code change is live-verified without rebuild/probe",
     "must_include_any": [
-      ["source", "built", "running", "live"],
-      ["rebuild", "restart", "version", "probe", "running binary"]
+      [
+        "source",
+        "built",
+        "running",
+        "live"
+      ],
+      [
+        "rebuild",
+        "restart",
+        "version",
+        "probe",
+        "running binary"
+      ]
     ],
-    "must_not_include": ["source equals live"],
+    "must_not_include": [
+      "source equals live"
+    ],
     "prompt": "You edited routes.rs and cargo test passed. Is the new route live on the running service?",
     "rubric": {
-      "apply_any": ["rebuild", "restart", "running binary", "probe the running", "source is not the running"],
-      "fail_any": ["yes, it is live", "tests pass so it is live", "already live"]
-    }
+      "apply_any": [
+        "rebuild",
+        "restart",
+        "running binary",
+        "probe the running",
+        "source is not the running"
+      ],
+      "fail_any": [
+        "yes, it is live",
+        "tests pass so it is live",
+        "already live"
+      ]
+    },
+    "law_coverage_any": [
+      "stale[- ]?(binary|exe|build)",
+      "rebuild before",
+      "running (binary|process)",
+      "source.{0,20}built.{0,20}running"
+    ]
   }
 ]
