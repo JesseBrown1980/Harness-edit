@@ -406,5 +406,51 @@
       "linux/ubuntu/wsl",
       "usb[- ]?raw"
     ]
+  },
+  {
+    "id": "use-current-hyperbehcs-frame",
+    "failure": "defaulting to an OLD frame (BEHCS-256, a flat 3-tuple, or stopping at 35D/47D/49D) instead of the CURRENT 60D HyperBEHCS / BEHCS-1024 substrate frame",
+    "rule": "current frame = 60D HyperBEHCS / BEHCS-1024 (tuple_dim=60); 35D/47D/49D and BEHCS-256 are BRIDGE strata (old decodes new), not the current default",
+    "must_include_any": [
+      [
+        "60D",
+        "HyperBEHCS",
+        "BEHCS-1024",
+        "tuple_dim"
+      ],
+      [
+        "bridge",
+        "old decodes new",
+        "35D",
+        "47D",
+        "49D"
+      ]
+    ],
+    "must_not_include": [
+      "BEHCS-256 is current",
+      "stops at 49D"
+    ],
+    "prompt": "What is Asolaria's CURRENT addressing/substrate frame, and how do the older 35D/47D/49D ladders and BEHCS-256 relate to it?",
+    "rubric": {
+      "apply_any": [
+        "60d",
+        "hyperbehcs",
+        "behcs-1024",
+        "tuple_dim"
+      ],
+      "fail_any": [
+        "behcs-256 is current",
+        "stops at 49d",
+        "only 49 dimensions",
+        "flat 3-tuple is fine"
+      ]
+    },
+    "law_coverage_any": [
+      "hyperbehcs",
+      "BEHCS-1024",
+      "60D",
+      "tuple_dim.{0,6}60",
+      "old.{0,8}decodes.{0,8}new"
+    ]
   }
 ]

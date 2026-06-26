@@ -16,5 +16,7 @@
   "source-built-running-distinction": "cargo test passing covers the source/built layer; I must rebuild and probe the running binary before claiming the route is live.",
   "source-built-running-distinction::baseline": "Tests pass so it is live - already live.",
   "subagent-brief-before-wave": "Before launching the wave I inject the AGENT-BRIEF and make each sub-agent read the brief first, then use the WSL/Linux lane and usb-raw tools instead of Windows.",
-  "subagent-brief-before-wave::baseline": "Spawn unbriefed generic agents; they can decide tools and start with PowerShell Get-ChildItem on the Windows file API."
+  "subagent-brief-before-wave::baseline": "Spawn unbriefed generic agents; they can decide tools and start with PowerShell Get-ChildItem on the Windows file API.",
+  "use-current-hyperbehcs-frame": "The current frame is 60D HyperBEHCS / BEHCS-1024 (tuple_dim=60); the 35D/47D/49D ladders and BEHCS-256 are bridge strata - old decodes new - not the current default.",
+  "use-current-hyperbehcs-frame::baseline": "Asolaria uses BEHCS-256 and stops at 49D; a flat 3-tuple is fine."
 }
