@@ -27,19 +27,19 @@ This is what makes the harness work across both seats — Claude and Codex are f
 
 ```bash
 # offline self-test: a "good" trajectory should pass, a "bad" one should fail
-python scripts/rollout_score.py --scenarios examples/asolaria-rollout.json \
+python scripts/rollout_score.py --scenarios examples/asolaria-scenarios.json \
   --harness transcript --transcript examples/transcripts/good.json   # -> ok=1 8/8
-python scripts/rollout_score.py --scenarios examples/asolaria-rollout.json \
+python scripts/rollout_score.py --scenarios examples/asolaria-scenarios.json \
   --harness transcript --transcript examples/transcripts/bad.json    # -> ok=0 0/8
 
 # offline delta self-test: good with-skill trajectory vs bad no-skill baseline
-python scripts/rollout_score.py --scenarios examples/asolaria-rollout.json \
+python scripts/rollout_score.py --scenarios examples/asolaria-scenarios.json \
   --harness transcript --transcript examples/transcripts/good-with-bad-baseline.json \
   --baseline                                                    # -> ok=1 8/8, baseline=0, delta=8
 
 # live rollout with the Claude (acer) harness, skill vs no-skill delta
 ANTHROPIC_API_KEY=... python scripts/rollout_score.py \
-  --scenarios examples/asolaria-rollout.json --harness claude \
+  --scenarios examples/asolaria-scenarios.json --harness claude \
   --skill ../path/to/SKILL.md --baseline
 ```
 
@@ -49,7 +49,9 @@ raises the rollout pass-rate without regressing a passing scenario.
 
 ## Scenario format
 
-Each scenario adds a realistic `prompt` and a `rubric` to the v1 fields:
+`examples/asolaria-scenarios.json` is the canonical scenario file for both v1 and v2.
+Each scenario keeps the v1 `must_include_any` / `must_not_include` fields and adds a realistic
+`prompt` plus rollout `rubric`:
 
 ```json
 {

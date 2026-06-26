@@ -15,7 +15,7 @@ Harness-agnostic via a pluggable adapter (SkillOpt's adapter interface, arXiv 26
 Live adapters error clearly if the key is absent; no key is read into the report or stored.
 
 Usage:
-  python scripts/rollout_score.py --scenarios examples/asolaria-rollout.json \
+  python scripts/rollout_score.py --scenarios examples/asolaria-scenarios.json \
     --harness transcript --transcript examples/transcripts/good.json \
     --skill examples/asolaria-claims-gate-sample.md
 """
