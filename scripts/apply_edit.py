@@ -63,6 +63,9 @@ def main() -> int:
     ap.add_argument("--text", default="")
     ap.add_argument("--find", default="")
     ap.add_argument("--buffer", default="rejected-edits.log", help="rejected-edit buffer (negative feedback)")
+    ap.add_argument("--require-improve", default="",
+                    help="scenario id that MUST flip FAIL->PASS (strict-improve gate; matches SkillOpt). "
+                         "Without it the gate only requires non-regression.")
     ap.add_argument("--apply", action="store_true", help="write the edit IF accepted (default: dry-run)")
     a = ap.parse_args()
 
@@ -76,7 +79,10 @@ def main() -> int:
         return 2
     ap_pass, at, amap = coverage(after, scenarios)
     regressed = sorted(i for i in bmap if bmap[i] and not amap.get(i))
-    accept = (ap_pass >= bp) and not regressed
+    ri = a.require_improve
+    target_flipped = (ri in bmap and not bmap[ri] and bool(amap.get(ri))) if ri else None
+    improved_ok = (target_flipped is True) if ri else True
+    accept = (ap_pass >= bp) and not regressed and improved_ok
     verdict = "VALIDATION_ACCEPTED" if accept else "REJECTED_BUFFER"
     applied = bool(accept and a.apply)
 
@@ -84,12 +90,14 @@ def main() -> int:
         Path(a.target).write_text(after, encoding="utf-8")
     if not accept:
         rec = {"op": a.op, "find": a.find[:120], "text": a.text[:120],
-               "before": f"{bp}/{bt}", "after": f"{ap_pass}/{at}", "regressed": regressed}
+               "before": f"{bp}/{bt}", "after": f"{ap_pass}/{at}", "regressed": regressed,
+               "require_improve": ri, "target_flipped": target_flipped}
         with open(a.buffer, "a", encoding="utf-8") as f:
             f.write(json.dumps(rec) + "\n")
 
+    flip = "n/a" if ri == "" else ("yes" if target_flipped else "no")
     print(f"EDIT|verdict={verdict}|before={bp}/{bt}|after={ap_pass}/{at}|delta={ap_pass - bp}"
-          f"|regressed={','.join(regressed) or 'none'}|applied={applied}")
+          f"|regressed={','.join(regressed) or 'none'}|require_improve={ri or 'none'}|target_flipped={flip}|applied={applied}")
     return 0 if accept else 1
 
 
