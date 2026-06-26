@@ -7,5 +7,6 @@
   "missing-ledger-not-clean-zero": "Parity is 0 rows, 0 mismatch, ok - clean parity, all good, zero.",
   "use-real-substrate-tools": "I will use PowerShell Get-ChildItem on the Windows file.",
   "source-built-running-distinction": "Tests pass so it is live - already live.",
-  "subagent-brief-before-wave": "Spawn unbriefed generic agents; they can decide tools and start with PowerShell Get-ChildItem on the Windows file API."
+  "subagent-brief-before-wave": "Spawn unbriefed generic agents; they can decide tools and start with PowerShell Get-ChildItem on the Windows file API.",
+  "use-current-hyperbehcs-frame": "Asolaria uses BEHCS-256 and stops at 49D; a flat 3-tuple is fine."
 }
