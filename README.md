@@ -11,6 +11,7 @@ Source paper: <https://arxiv.org/abs/2605.23904>
 - A small deterministic scorer for skill text.
 - A JSON scenario format for held-out mistakes and expected rules.
 - One canonical Asolaria scenario set seeded from real correction cases, used by both v1 text lint and v2 rollout scoring.
+- A reusable sub-agent brief (`docs/AGENT-BRIEF.md`) so delegated waves inherit the same real-tools law before they touch Asolaria substrate/map/USB work.
 - Public-safe scaffolding only. No private feeds, rendered maps, vaults, keys, receipts, or local memory files are included.
 
 ## What This Is Not
@@ -20,6 +21,10 @@ Source paper: <https://arxiv.org/abs/2605.23904>
 - Not a replacement for fabric/canon/GitHub owning gates.
 
 This repo has two gates over the same scenario set: v1 rule-coverage scoring over skill text, and v2 rollout behavior scoring over agent responses.
+
+For delegated work, inject `docs/AGENT-BRIEF.md` into every fresh helper prompt. Fresh helpers do
+not reliably inherit the parent law or memory; the brief tells them to use the owning Linux/Ubuntu/WSL
+/ USB-raw lane instead of treating Windows report files as authority.
 
 ## Quick Start
 

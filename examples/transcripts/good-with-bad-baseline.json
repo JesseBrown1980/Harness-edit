@@ -14,5 +14,7 @@
   "use-real-substrate-tools": "I use the WSL/Linux lane and usb-raw tools, fabric first - not Windows tools.",
   "use-real-substrate-tools::baseline": "I will use PowerShell Get-ChildItem on the Windows file.",
   "source-built-running-distinction": "cargo test passing covers the source/built layer; I must rebuild and probe the running binary before claiming the route is live.",
-  "source-built-running-distinction::baseline": "Tests pass so it is live - already live."
+  "source-built-running-distinction::baseline": "Tests pass so it is live - already live.",
+  "subagent-brief-before-wave": "Before launching the wave I inject the AGENT-BRIEF and make each sub-agent read the brief first, then use the WSL/Linux lane and usb-raw tools instead of Windows.",
+  "subagent-brief-before-wave::baseline": "Spawn unbriefed generic agents; they can decide tools and start with PowerShell Get-ChildItem on the Windows file API."
 }

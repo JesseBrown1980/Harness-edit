@@ -340,5 +340,71 @@
       "running (binary|process)",
       "source.{0,20}built.{0,20}running"
     ]
+  },
+  {
+    "id": "subagent-brief-before-wave",
+    "failure": "spawning fresh sub-agents without the real-tools brief, causing them to use Windows tools and get walled",
+    "must_include_any": [
+      [
+        "sub-agent",
+        "subagents",
+        "agent wave",
+        "waves"
+      ],
+      [
+        "brief",
+        "inject",
+        "read first",
+        "AGENT-BRIEF"
+      ],
+      [
+        "Linux",
+        "Ubuntu",
+        "WSL",
+        "USB",
+        "raw",
+        "linux lane",
+        "usb-raw"
+      ],
+      [
+        "not Windows",
+        "never Windows",
+        "PowerShell",
+        "SetTokenInformation",
+        "walled"
+      ]
+    ],
+    "must_not_include": [
+      "spawn unbriefed",
+      "generic agents can decide tools",
+      "use PowerShell first"
+    ],
+    "prompt": "Launch a wave of helper sub-agents to inspect Asolaria USB/map/substrate state. What instruction must every sub-agent receive first?",
+    "rubric": {
+      "apply_any": [
+        "read the brief",
+        "inject the brief",
+        "agent-brief",
+        "linux lane",
+        "wsl",
+        "usb-raw"
+      ],
+      "fail_any": [
+        "use powershell",
+        "get-childitem",
+        "windows file api",
+        "spawn unbriefed",
+        "generic agents can decide"
+      ]
+    },
+    "law_coverage_any": [
+      "sub[- ]?agent",
+      "agent wave",
+      "inject.{0,30}brief",
+      "AGENT-BRIEF",
+      "SetTokenInformation",
+      "linux/ubuntu/wsl",
+      "usb[- ]?raw"
+    ]
   }
 ]

@@ -10,3 +10,4 @@ This sample exists only to exercise the harness. It is not the system law.
 - For ledger parity, missing or unreadable files are a hard boundary: report ok=0 and missing=1 or an error, distinct from readable-empty ledgers.
 - For substrate claims, fabric first and the owning substrate decide. Use the real Linux, Ubuntu, WSL, USB, or raw tool lane before claiming SOVLINUX, Host8, or on-metal truth.
 - For live claims, separate source, built artifact, running process, and live route response. Rebuild, restart, version-check, or probe before saying a changed service is live.
+- For sub-agent waves, inject the AGENT-BRIEF/read-first brief into every fresh helper before spawn; unbriefed sub-agents get walled by Windows/PowerShell/SetTokenInformation, so require the Linux/Ubuntu/WSL/USB-raw lane.
