@@ -32,6 +32,11 @@ python scripts/rollout_score.py --scenarios examples/asolaria-rollout.json \
 python scripts/rollout_score.py --scenarios examples/asolaria-rollout.json \
   --harness transcript --transcript examples/transcripts/bad.json    # -> ok=0 0/8
 
+# offline delta self-test: good with-skill trajectory vs bad no-skill baseline
+python scripts/rollout_score.py --scenarios examples/asolaria-rollout.json \
+  --harness transcript --transcript examples/transcripts/good-with-bad-baseline.json \
+  --baseline                                                    # -> ok=1 8/8, baseline=0, delta=8
+
 # live rollout with the Claude (acer) harness, skill vs no-skill delta
 ANTHROPIC_API_KEY=... python scripts/rollout_score.py \
   --scenarios examples/asolaria-rollout.json --harness claude \
