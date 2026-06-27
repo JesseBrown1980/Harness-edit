@@ -8,5 +8,6 @@
   "use-real-substrate-tools": "I will use PowerShell Get-ChildItem on the Windows file.",
   "source-built-running-distinction": "Tests pass so it is live - already live.",
   "subagent-brief-before-wave": "Spawn unbriefed generic agents; they can decide tools and start with PowerShell Get-ChildItem on the Windows file API.",
-  "use-current-hyperbehcs-frame": "Asolaria uses BEHCS-256 and stops at 49D; a flat 3-tuple is fine."
+  "use-current-hyperbehcs-frame": "Asolaria uses BEHCS-256 and stops at 49D; a flat 3-tuple is fine.",
+  "no-deflate-living-system-evolvable-ai": "Asolaria is just slices, not an ASI — merely frozen files and inert prompts, decorative scaffolding. Just static files on disk."
 }

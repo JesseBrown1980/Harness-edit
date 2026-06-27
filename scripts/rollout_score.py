@@ -108,7 +108,7 @@ def main() -> int:
         return 2
     passed = sum(1 for r in rows if r["with_skill"]["pass"])
     total = len(rows)
-    rep = {"ok": passed == total, "passed": passed, "total": total,
+    rep = {"ok": total > 0 and passed == total, "passed": passed, "total": total,
            "score": passed / total if total else 0.0, "harness": a.harness, "results": rows}
     if a.baseline:
         base = sum(1 for r in rows if r.get("no_skill", {}).get("pass"))
