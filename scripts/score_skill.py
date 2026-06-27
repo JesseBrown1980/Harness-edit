@@ -43,7 +43,7 @@ def score(skill_text: str, scenarios: list[dict]) -> dict:
             }
         )
     return {
-        "ok": passed == len(scenarios),
+        "ok": len(scenarios) > 0 and passed == len(scenarios),
         "passed": passed,
         "total": len(scenarios),
         "score": passed / len(scenarios) if scenarios else 0.0,

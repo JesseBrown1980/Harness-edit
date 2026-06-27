@@ -82,7 +82,7 @@ def main() -> int:
     ri = a.require_improve
     target_flipped = (ri in bmap and not bmap[ri] and bool(amap.get(ri))) if ri else None
     improved_ok = (target_flipped is True) if ri else True
-    accept = (ap_pass >= bp) and not regressed and improved_ok
+    accept = at > 0 and (ap_pass >= bp) and not regressed and improved_ok  # reject empty/vacuous held-out set (total=0)
     verdict = "VALIDATION_ACCEPTED" if accept else "REJECTED_BUFFER"
     applied = bool(accept and a.apply)
 
