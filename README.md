@@ -1,3 +1,5 @@
+> ⚠ **P4B frame:** the **SkillOpt / claims-gate / watcher-correction loop** (validation-gated skill/law edits) — NOT a hot-path JSON fabric. See [`HARNESS-EDIT-ROOT-FRAME.md`](./HARNESS-EDIT-ROOT-FRAME.md) + the system `MAP.md`.
+
 # Harness-edit
 
 SkillOpt-style edit harness for validating changes to agent skill documents.
