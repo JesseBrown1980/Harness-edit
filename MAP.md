@@ -50,6 +50,18 @@ tables below to see where you are; follow the links to walk the rest.
 | `-6-cyl-generator` | satellite generator |
 | `asolaria-whiteroom-engine` · `35-TB-google-AI-Ultra-migration` | (= LEG-1 + LEG-4, listed under External legs) |
 
+## Prism/Comb 0-loss (2026-07-01) — satellite entry
+Every prism/comb operation in the fabric is a **bijection** — entropy is invariant (`H(f(X)) = H(X)`):
+0-loss re-relation, never compression below Shannon. **Scope:** only the 256↔1024 level transcode is
+**MEASURED** (Q-PRISM `53023b6`/`79e8d63`/`de00aca`, sha256-identical round-trip at `lcm(8,10)=40` bits);
+the 43+ level ladder is **CANON frame**; every other rung stays **UNVERIFIED** until its own round-trip proof.
+**This repo is the integrity dual of that law applied to law text:** verification = recomputation =
+the inverse map, and the gated skill-edit loop (`apply_edit.py`: held-out coverage must not regress →
+`VALIDATION_ACCEPTED`, else refuse + rejected-edit buffer) makes a regressive law edit as inexpressible
+in the edit chain as a lossy step in a bijection chain. This campaign propagated the same way — briefed
+receivers + attack-verify, docs-only, E=0, nothing fired. Cross-links: waves-cascades (comb/prism duality) ·
+what-is-asolaria (addressing ≠ compression boundary) · N-Nest (per-node integrity dual) · Metatagging (physics grounding).
+
 ## Current state & evolution (2026-06-28) — read this, don't flatten it
 Asolaria is a **2.5-month archaeology**, not a flat stack. **Capability lineage:** auto-approval switch →
 dashboard → multi-agent → local+web MCP + code-wiki → index language (pixels-first) → cubes-as-catalogs
